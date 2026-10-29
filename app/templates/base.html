@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}User Management{% endblock %} · UMS</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body><header class="topbar"><a class="brand" href="{{ url_for('main.index') }}"><span class="brand-mark">U</span>User Management</a>
+<nav><a href="{{ url_for('main.index') }}">Dashboard</a><a class="nav-cta" href="{{ url_for('main.create_user_page') }}">+ Add user</a></nav></header>
+<main class="container">{% block content %}{% endblock %}</main><footer>Flask · SQLAlchemy · MySQL-ready demo</footer>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script></body></html>

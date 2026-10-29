@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}{{ user.name }}{% endblock %}{% block content %}
+<div class="breadcrumbs"><a href="{{ url_for('main.index') }}">Users</a><span>/</span><span>Profile</span></div>
+<section class="profile-card panel"><div class="profile-head"><span class="profile-avatar">{{ user.name[:1]|upper }}</span><div><p class="eyebrow">USER PROFILE</p><h1>{{ user.name }}</h1><p class="muted">{{ user.email }}</p></div><span class="role-chip">{{ user.role }}</span></div>
+<div class="profile-grid"><div><span class="stat-label">User ID</span><strong>#{{ user.id }}</strong></div><div><span class="stat-label">Created on</span><strong>{{ user.created_at.strftime('%d %B %Y') if user.created_at else '—' }}</strong></div></div>
+<div class="form-actions"><a class="button secondary" href="{{ url_for('main.index') }}">Back to users</a><a class="button primary" href="{{ url_for('main.edit_user_page', user_id=user.id) }}">Edit profile</a></div></section>{% endblock %}
